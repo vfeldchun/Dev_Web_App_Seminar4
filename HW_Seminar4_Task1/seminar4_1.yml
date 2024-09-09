@@ -1,0 +1,35 @@
+# Use postgres/example user/password credentials
+version: "3.1"
+services:
+  db:
+    image: postgres
+    hostname: dbproducts
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: example
+    ports:
+      - "5432:5432"
+    networks:
+      - redis-network
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+    networks:
+      - redis-network
+  dbwebapi:
+    image: dbwebapi
+    restart: always
+    ports:
+      - 8095:8080
+    networks:
+      - redis-network
+    depends_on:
+      - db
+volumes:
+  redis:
+  redis-config:
+networks:
+  redis-network:
+    driver: bridge

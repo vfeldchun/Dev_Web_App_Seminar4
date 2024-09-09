@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34601.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DbWebApi", "DbWebApi\DbWebApi.csproj", "{C5136F2B-550B-4437-A8DE-67B4A3F8C761}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphQl", "GraphQl\GraphQl.csproj", "{98ABDE24-64D7-4807-8F14-CB02D89C3621}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C5136F2B-550B-4437-A8DE-67B4A3F8C761}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5136F2B-550B-4437-A8DE-67B4A3F8C761}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5136F2B-550B-4437-A8DE-67B4A3F8C761}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5136F2B-550B-4437-A8DE-67B4A3F8C761}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98ABDE24-64D7-4807-8F14-CB02D89C3621}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98ABDE24-64D7-4807-8F14-CB02D89C3621}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98ABDE24-64D7-4807-8F14-CB02D89C3621}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98ABDE24-64D7-4807-8F14-CB02D89C3621}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EAC6F969-F83B-4EC1-96BE-3C89905157C5}
+	EndGlobalSection
+EndGlobal

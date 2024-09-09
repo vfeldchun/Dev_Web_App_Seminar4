@@ -1,0 +1,70 @@
+# Use postgres/example user/password credentials
+version: "3.1"
+services:
+  # Common database for API services
+  db:
+    image: postgres
+    hostname: pgdb
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: example
+    ports:
+      - "5432:5432"
+    networks:
+      - api-network
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+    networks:
+      - api-network
+  # User API Service
+  userapi:
+    build: ./UserService
+    image: userapi
+    hostname: usrhost
+    restart: always
+    ports:
+      - 8096:8080
+    networks:
+      - api-network
+    depends_on:
+      - db
+  # Library API Service
+  lybraryapi:
+    build: ./LibraryService
+    image: libraryapi
+    hostname: libhost
+    restart: always
+    ports:
+      - 8097:8080
+    depends_on:
+      - db
+  # ClentBooks API Service
+  clientbookapi:
+    build: ./TakeBookService
+    image: clientbookapi
+    hostname: bookhost
+    restart: always
+    ports:
+      - 8098:8080
+    networks:
+      - api-network
+    depends_on:
+      - db
+  # Gateway API Service
+  apigetaway:
+    build: ./ApiGetaway
+    image: apigetaway
+    hostname: gwhost
+    restart: always
+    ports:
+      - 8099:8080
+    networks:
+      - api-network
+    depends_on:
+      - db
+networks:
+  api-network:
+    driver: bridge

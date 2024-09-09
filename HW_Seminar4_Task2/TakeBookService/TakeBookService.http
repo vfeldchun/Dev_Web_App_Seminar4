@@ -1,0 +1,6 @@
+@TakeBookService_HostAddress = http://localhost:5173
+
+GET {{TakeBookService_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
